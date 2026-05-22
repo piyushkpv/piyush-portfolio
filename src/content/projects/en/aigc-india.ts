@@ -12,7 +12,20 @@ export default {
   tags: ["html", "css", "javascript", "three"],
   videoBorder: false,
   description:
-    "AI Content Operations & Scale<br/><br/>Built and scaled AI-generated content workflows for India market operations, improving content generation efficiency and supporting large-scale ecosystem growth.",
+    "AI Content Operations & Scale for the Indian market ecosystem.",
+  problem:
+    "Inconsistent content quality and slow turnaround times for regional content needs, hindering large-scale ecosystem growth and user engagement in the India market.",
+  strategy:
+    "Developed and scaled AI-generated content (AIGC) workflows to automate content creation while maintaining high localization quality and regional relevance.",
+  execution:
+    "Built and optimized end-to-end AIGC pipelines, integrated automation tools for metadata generation, and established quality control frameworks for AI-assisted operations.",
+  outcomes:
+    "Significantly improved content generation efficiency and supported large-scale growth across the regional ecosystem through scalable AI systems.",
+  metrics: [
+    "Scalable content systems established",
+    "Workflow optimization for regional ops",
+    "Enhanced content efficiency",
+  ],
   components: [
     { type: "media", props: { type: "video", src: videoParticles, caption: "AI Workflows" } },
     { type: "media", props: { type: "image", src: particles0, alt: "Content Generation", caption: "Content Generation" } },

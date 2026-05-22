@@ -33,48 +33,51 @@ const classes = computed(() => [
   white-space: nowrap;
   text-transform: uppercase;
   background-color: transparent;
-  transition:
-    background-color 0.1s ease-in-out,
-    color 0.1s ease-in-out,
-    border-color 0.1s ease-in-out;
+  transition: all 0.25s ease;
 
   &-rounded {
     border-radius: 50%;
     aspect-ratio: 1;
-  }
-
-  &-accent {
-    background-color: var(--color-accent-400, var(--color-orange-400));
-    color: var(--color-accent-text-400, var(--color-white-400));
 
     @include mixins.hover {
       &:hover {
-        background-color: var(--color-hover, var(--color-black-400));
-        color: var(--color-hover-text, var(--color-white-400));
+        box-shadow: 0 0 15px rgba(var(--color-cyan-400-rgb), 0.5);
+        filter: brightness(1.1);
+      }
+    }
+  }
+
+  &-accent {
+    background-color: var(--color-btn-accent-bg);
+    color: var(--color-btn-accent-text);
+
+    @include mixins.hover {
+      &:hover {
+        filter: brightness(1.1);
+        box-shadow: 0 0 15px rgba(var(--color-orange-400-rgb), 0.3);
       }
     }
   }
 
   &-theme {
-    background-color: var(--color-grayscale-500);
-    color: var(--color-text-400);
+    background-color: var(--color-btn-theme-bg);
+    color: var(--color-btn-theme-text);
 
     @include mixins.hover {
       &:hover {
-        background-color: var(--color-hover);
-        color: var(--color-white-400);
+        filter: brightness(1.2);
+        box-shadow: 0 0 20px rgba(var(--color-cyan-400-rgb), 0.2);
       }
     }
   }
 
   &-background {
-    background-color: var(--color-background-400);
-    color: var(--color-text-400);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
 
     @include mixins.hover {
       &:hover {
-        background-color: var(--color-text-400);
-        color: var(--color-background-400);
+        background-color: var(--color-grayscale-500);
       }
     }
   }
@@ -91,14 +94,13 @@ const classes = computed(() => [
   }
 
   &-border {
-    border: 2px solid var(--color-grayscale-400);
-    color: var(--color-text-400);
+    border: 2px solid var(--color-text-secondary);
+    color: var(--color-text-primary);
 
     @include mixins.hover {
       &:hover {
-        background-color: var(--color-hover, var(--color-black-400));
-        color: var(--color-white-400);
-        border-color: var(--color-hover, var(--color-black-400));
+        background-color: rgba(var(--color-white-400-rgb), 0.05);
+        filter: brightness(1.1);
       }
     }
   }

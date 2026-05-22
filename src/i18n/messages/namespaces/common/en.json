@@ -10,7 +10,7 @@
   "germany": "Bangalore, India",
   "get-in-touch": "Get in touch",
   "go-to": "Go to",
-  "job-title": "PRODUCT MANAGER • AI • GROWTH",
+  "job-title": "PRODUCT MANAGER • AI • GROWTH • CONSUMER TECH",
   "lets-work-together": "Let's build<br/>growth together.",
   "live-view": "Live View",
   "location": "Location",
@@ -23,5 +23,11 @@
   "source-code": "Case Study",
   "switch-to-project": "Switch to project {project}",
   "version": "Version",
-  "view-project": "View project"
+  "view-project": "View project",
+  "download-resume": "Download Resume",
+  "experience": "Experience",
+  "metrics-orders": "30K+ Successful Orders",
+  "metrics-markets": "10+ Regional Markets",
+  "metrics-ai": "AI Content Operations",
+  "metrics-ecosystem": "Consumer Tech Ecosystems"
 }

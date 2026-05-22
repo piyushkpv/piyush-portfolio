@@ -12,12 +12,13 @@ const handleLinkClick = (link: string) => {
   lenis.value.scrollTo(link);
 };
 
-type ActiveLink = "about" | "projects" | "contact";
+type ActiveLink = "about" | "projects" | "experience" | "contact";
 const activeLink = ref<ActiveLink | null>(null);
-const sections: ActiveLink[] = ["about", "projects", "contact"];
+const sections: ActiveLink[] = ["about", "projects", "experience", "contact"];
 const ariaLabels = {
   about: t("about"),
   projects: t("projects"),
+  experience: t("experience"),
   contact: t("contact"),
 };
 
@@ -26,7 +27,7 @@ const isMounted = ref(false);
 const barStyle = ref({ transform: "" });
 const ITEM_WIDTH = 128;
 
-const { isDarkTheme, hasScrolledIntoView } = useHeaderTheme();
+const { hasScrolledIntoView } = useHeaderTheme();
 
 const updateBarPosition = () => {
   const index = sections.indexOf(activeLink.value as ActiveLink);
@@ -63,25 +64,17 @@ onMounted(() => {
 
 <template>
   <div :class="['header-home', { 'header-home-mounted': isMounted, 'header-home-isProjectPage': projectId !== null }]">
-    <div :class="['header-home-links', { 'header-home-links-dark': isDarkTheme }]">
+    <div class="header-home-links">
       <div
-        :class="[
-          'header-home-bar',
-          { 'header-home-bar-active': activeLink !== null && hasScrolledIntoView, 'header-home-bar-dark': isDarkTheme },
-        ]"
+        :class="['header-home-bar', { 'header-home-bar-active': activeLink !== null && hasScrolledIntoView }]"
         :style="barStyle"
       ></div>
       <HeaderLink
         v-for="section in sections"
         :key="section"
-        :is-active="activeLink === section"
-        :class="[
-          'header-home-link',
-          { 'header-home-link-active': activeLink === section && hasScrolledIntoView },
-          'children-unclickable',
-        ]"
+        :is-active="activeLink === section && hasScrolledIntoView"
+        class="header-home-link children-unclickable"
         @click="handleLinkClick('#' + section)"
-        :is-dark-theme="isDarkTheme"
         :aria-label="ariaLabels[section]"
         data-sound="click"
         data-hoversound="hover"
@@ -123,38 +116,41 @@ onMounted(() => {
   &-links {
     position: relative;
     display: flex;
-    padding: 3px;
-    background-color: var(--color-beige-500);
+    align-items: center;
+    padding: 4px;
+    background-color: var(--color-nav-bg);
     border-radius: 100px;
-    color: var(--color-text-400);
+    color: var(--color-nav-text);
     transition:
-      color 0.1s ease-in-out,
-      background-color 0.1s ease-in-out;
+      color var(--transition-theme),
+      background-color var(--transition-theme);
+    height: 54px;
+    max-width: calc(100vw - 32px);
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
-    &-dark {
-      background-color: var(--color-dark-blue-500);
-      color: var(--color-white-400);
+    @include mixins.mq("md") {
+      height: 60px;
     }
   }
 
   &-bar {
     position: absolute;
-    top: 3px;
-    left: 3px;
-    height: calc(100% - 6px);
+    top: 4px;
+    left: 4px;
+    height: calc(100% - 8px);
     width: 128px;
-    background: var(--color-orange-400);
+    background: var(--color-nav-bar);
     border-radius: 100px;
     transition:
       transform 0.3s var(--ease-smooth),
-      opacity 0.1s ease-in-out,
-      background-color 0.1s ease-in-out;
+      opacity 0.1s ease-in-out;
     z-index: 1;
     opacity: 0;
-
-    &-dark {
-      background-color: var(--color-cyan-500);
-    }
 
     &-active {
       opacity: 1;
@@ -168,14 +164,19 @@ onMounted(() => {
     font-weight: 700;
     border: none;
     background: none;
-    transition: color 0.1s ease-in-out;
+    transition: color 0.25s ease;
     font-size: var(--font-size-md);
     width: 128px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     white-space: nowrap;
     text-transform: uppercase;
+    color: inherit;
 
     &-active {
-      color: var(--color-white-400);
+      color: var(--color-nav-text-active);
     }
   }
 }

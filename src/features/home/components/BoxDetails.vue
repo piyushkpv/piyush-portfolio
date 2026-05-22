@@ -189,6 +189,8 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
     flex-direction: row;
     justify-content: space-between;
     padding: var(--space-sm) var(--space-md);
+    color: var(--color-hologram-text-primary);
+    box-shadow: 0 0 15px rgba(var(--color-cyan-400-rgb), 0.2);
 
     @include mixins.landscape {
       flex-direction: column;
@@ -208,11 +210,13 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
     flex-direction: row;
     white-space: nowrap;
     height: var(--icon-size-sm);
+    color: var(--color-hologram-text-secondary);
   }
 
   &-icon {
     width: var(--icon-size-xxs);
     transform: translateY(-1px);
+    color: var(--color-cyan-400);
 
     @include mixins.mq("md") {
       width: var(--icon-size-xs);

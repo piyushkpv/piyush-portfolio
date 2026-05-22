@@ -4,6 +4,7 @@ import Hero from "./Hero.vue";
 import About from "./About.vue";
 //import AboutSections from "../features/about/Sections.vue";
 import Projects from "./Projects.vue";
+import Experience from "./Experience.vue";
 import Contact from "./Contact.vue";
 import Footer from "../../../components/Footer.vue";
 import { ref, onMounted, onUnmounted, watchEffect, computed, watch } from "vue";
@@ -158,6 +159,7 @@ watch(
         <div class="about-spacer" ref="aboutSpacerRef" id="about"></div>
       </div>
       <Projects id="projects" @loaded="handleProjectsLoaded" />
+      <Experience id="experience" />
       <div ref="contactRef" class="home-contact">
         <Contact id="contact" v-if="projectsLoaded" />
       </div>
@@ -248,9 +250,7 @@ watch(
   top: 0;
   left: 0;
   width: 100%;
-  max-height: calc(var(--lvh) * 100);
-  min-height: calc(var(--lvh) * 100);
-  overflow: hidden;
+  height: 100%;
 }
 
 .intro-about-hidden {

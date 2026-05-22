@@ -15,7 +15,20 @@ export default {
   tags: ["ogl", "react", "glsl", "postgresql"],
   videoBorder: false,
   description:
-    "Content Platform Operations<br/><br/>Contributed to TV+ and PatchWall ecosystem operations, content workflows, platform optimization, and consumer entertainment experiences.",
+    "Content Platform Operations for Xiaomi's entertainment ecosystem.",
+  problem:
+    "Complexity in content platform operations and fragmented workflows across TV+ and PatchWall, leading to inefficiencies in entertainment content delivery.",
+  strategy:
+    "Optimized platform operations through streamlined content workflows, enhanced entertainment experience focus, and improved engagement systems across the TV ecosystem.",
+  execution:
+    "Contributed to end-to-end platform optimization, established standardized content operations workflows, and refined consumer entertainment experiences through data-driven engagement loops.",
+  outcomes:
+    "Improved operational efficiency for content platform delivery and enhanced the overall consumer entertainment experience across global markets.",
+  metrics: [
+    "Standardized platform workflows",
+    "Enhanced entertainment experience",
+    "Optimized content operations",
+  ],
   components: [
     { type: "media", props: { type: "video", src: videoCubeWar, caption: "Platform Experience" } },
     { type: "media", props: { type: "image", src: cubewar0, alt: "Content Operations", caption: "Content Operations" } },

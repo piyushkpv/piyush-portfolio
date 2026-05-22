@@ -21,6 +21,7 @@ onUnmounted(() => {
   <div class="contact grid" ref="contactElement">
     <div class="contact-content">
       <h2 class="contact-title" v-html="t('lets-work-together')"></h2>
+      <p class="contact-subtext">{{ t('start-a-new-project') }}</p>
       <Social variant="background" />
     </div>
   </div>
@@ -34,6 +35,8 @@ onUnmounted(() => {
   min-height: calc(var(--lvh) * 100);
   padding: var(--space-outer);
   padding-top: var(--space-lg);
+  background: radial-gradient(circle at 50% 100%, rgba(var(--color-cyan-400-rgb), 0.1) 0%, transparent 80%);
+  transition: background 0.4s ease;
 
   @include mixins.mq("md") {
     padding-top: var(--space-xxl);
@@ -66,6 +69,8 @@ onUnmounted(() => {
     font-weight: 900;
     letter-spacing: 0.02em;
     font-size: var(--font-size-title-md);
+    color: var(--color-text-primary);
+    transition: color 0.4s ease;
 
     @include mixins.mq("sm") {
       font-size: var(--font-size-title-lg);
@@ -73,6 +78,18 @@ onUnmounted(() => {
 
     @include mixins.mq("xl") {
       font-size: var(--font-size-title-xl);
+    }
+  }
+
+  &-subtext {
+    font-size: var(--font-size-md);
+    color: var(--color-text-secondary);
+    max-width: 400px;
+    line-height: 1.6;
+    transition: color var(--transition-theme);
+
+    @include mixins.mq("md") {
+      font-size: var(--font-size-lg);
     }
   }
 }

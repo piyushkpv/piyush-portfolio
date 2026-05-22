@@ -54,14 +54,15 @@ onMounted(loadPreviews);
   gap: var(--space-xl);
   padding-left: var(--space-outer);
   padding-right: var(--space-outer);
-  background-color: var(--color-beige-400);
+  background-color: var(--color-bg);
   min-height: calc(var(--lvh) * 100 + var(--radius-xxl));
   padding-top: 96px;
-  padding-bottom: 96px;
+  padding-bottom: 48px;
+  transition: background-color var(--transition-theme);
 
   @include mixins.mq("md") {
     padding-top: 144px;
-    padding-bottom: 144px;
+    padding-bottom: 72px;
     gap: var(--space-xxl);
   }
 
@@ -86,6 +87,8 @@ onMounted(loadPreviews);
       font-weight: 900;
       letter-spacing: 0.02em;
       font-size: var(--font-size-title-md);
+      color: var(--color-text-primary);
+      transition: color var(--transition-theme);
 
       @include mixins.mq("sm") {
         font-size: var(--font-size-title-lg);
@@ -115,14 +118,16 @@ onMounted(loadPreviews);
       top: 0;
       left: 0;
       transform: translateY(-100%);
-      color: var(--color-beige-400);
+      color: var(--color-bg);
+      transition: color var(--transition-theme);
     }
 
     &-end {
       position: absolute;
       bottom: 0;
       left: 0;
-      color: var(--color-beige-600);
+      color: var(--color-bg);
+      transition: color var(--transition-theme);
     }
   }
 

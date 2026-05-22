@@ -68,7 +68,8 @@ watchEffect((onInvalidate) => {
 .about {
   &-content {
     position: absolute;
-    color: var(--color-text-cyan-400);
+    color: var(--color-hologram-text-primary);
+    transition: color 0.4s ease;
     font-family: "ProFontWindows";
     top: 0;
     width: 100%;

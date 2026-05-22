@@ -6,6 +6,7 @@ import { camera } from "./camera";
 import { sceneWeights } from "../../animations/scenes";
 import { colors } from "../common/colors";
 import { threeSizes } from "../utils/sizes";
+import { theme } from "../../utils/theme";
 
 import type { Camera, Object3D, Scene } from "three";
 
@@ -55,7 +56,15 @@ const tick = () => {
     renderTarget.render();
   }
 
-  const color = sceneWeights.contact > 0.001 ? colors.beigeDark : colors.beigeLight;
+  const color =
+    theme.value === "dark"
+      ? sceneWeights.contact > 0.001
+        ? colors.navyDark
+        : colors.navyLight
+      : sceneWeights.contact > 0.001
+        ? colors.beigeDark
+        : colors.beigeLight;
+
   instance.setClearColor(color);
   instance.render(scene.instance, camera.instance);
 };

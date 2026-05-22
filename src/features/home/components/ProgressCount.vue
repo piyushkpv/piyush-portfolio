@@ -34,7 +34,7 @@ onBeforeUnmount(() => {
 .progress-count {
   font-size: var(--font-size-sm);
   font-weight: 700;
-  color: var(--color-text-cyan-400);
+  color: var(--color-hologram-text-primary);
   font-family: "ProFontWindows";
   text-align: center;
   align-items: center;

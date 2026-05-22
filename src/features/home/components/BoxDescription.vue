@@ -168,20 +168,24 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
     &-name {
       font-size: var(--font-size-title-xs);
       font-weight: 700;
+      color: var(--color-hologram-text-primary);
     }
 
     &-location {
       display: flex;
       align-items: center;
       gap: var(--space-xs);
+      color: var(--color-hologram-text-secondary);
 
       &-icon {
         width: var(--icon-size-xs);
         transform: translateY(-1px);
+        color: var(--color-cyan-400);
       }
 
       &-copy {
         font-size: var(--font-size-md);
+        color: var(--color-hologram-text-secondary);
       }
     }
   }
@@ -222,6 +226,8 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
     border: var(--stroke-sm) solid var(--color-cyan-400);
     border-radius: var(--radius-md);
     background: linear-gradient(to bottom, var(--color-hologram-top) 0%, var(--color-hologram-bottom) 100%);
+    color: var(--color-hologram-text-primary);
+    box-shadow: 0 0 15px rgba(var(--color-cyan-400-rgb), 0.2);
 
     @include mixins.landscape {
       padding: var(--space-xs) var(--space-sm);

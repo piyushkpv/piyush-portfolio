@@ -10,6 +10,7 @@ import { social } from "../content/social";
 import ButtonRound from "./ButtonRound.vue";
 import ArrowRight from "./icons/ArrowRight.vue";
 import SoundsToggle from "./SoundsToggle.vue";
+import ThemeToggle from "./ThemeToggle.vue";
 import { isFeatureEnabled } from "../utils/features";
 import { useRouter } from "../composables/useRouter";
 import { useFirstRoute } from "../composables/useFirstRoute";
@@ -98,6 +99,21 @@ const getInTouchClassNames = computed(() => {
     <div class="header-right">
       <Button
         renderAs="a"
+        href="/resume/Piyush-Varshney-Resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        download="Piyush-Varshney-Resume.pdf"
+        variant="theme"
+        size="sm"
+        class="header-resume"
+        data-cursor="circle-white"
+        data-hoversound="hover"
+        data-sound="click"
+      >
+        {{ t("download-resume") }}
+      </Button>
+      <Button
+        renderAs="a"
         variant="accent"
         :aria-label="t('get-in-touch')"
         :href="social.find((item) => item.name === 'mail')?.url ?? ''"
@@ -108,6 +124,7 @@ const getInTouchClassNames = computed(() => {
         >{{ t("get-in-touch") }}</Button
       >
       <SoundsToggle class="header-sounds-toggle" :isDarkTheme="isDarkTheme" v-if="isFeatureEnabled('sounds')" />
+      <ThemeToggle class="header-theme-toggle" />
     </div>
   </header>
 </template>
@@ -155,8 +172,10 @@ const getInTouchClassNames = computed(() => {
   &-left {
     position: absolute;
     left: var(--space-outer);
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
   }
 
   &-get-in-touch {
@@ -170,12 +189,16 @@ const getInTouchClassNames = computed(() => {
   &-right {
     position: absolute;
     right: var(--space-outer);
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
+    height: 100%;
     pointer-events: auto;
     display: flex;
     align-items: center;
     gap: var(--space-sm);
+  }
+
+  &-theme-toggle {
+    margin-left: var(--space-xs);
   }
 
   &-music-toggle {
@@ -184,6 +207,14 @@ const getInTouchClassNames = computed(() => {
 
   &-dark {
     color: var(--color-white-400);
+  }
+
+  &-resume {
+    display: none;
+
+    @include mixins.mq("lg") {
+      display: flex;
+    }
   }
 
   &-get-in-touch {

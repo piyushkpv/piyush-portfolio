@@ -8,11 +8,12 @@
 @use "./preloader.scss";
 
 html {
-  background: var(--color-background-400);
-  color: var(--color-text-400);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
   font-family: "Urbanist";
   letter-spacing: 0.02em;
   overflow-y: scroll !important;
+  transition: background-color var(--transition-theme), color var(--transition-theme);
 
   --vh: 1vh;
   --dvh: 1vh;

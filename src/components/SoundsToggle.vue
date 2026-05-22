@@ -7,10 +7,6 @@ import { useAgent } from "../composables/useAgent";
 
 const { isTouch } = useAgent();
 
-const props = defineProps<{
-  isDarkTheme: boolean;
-}>();
-
 const toggleSounds = () => {
   soundsEnabled.value = !soundsEnabled.value;
 };
@@ -20,22 +16,19 @@ const toggleSounds = () => {
   <ButtonRound
     v-if="!isTouch"
     variant="theme"
-    :class="{ 'music-toggle': true, 'music-toggle-dark': props.isDarkTheme, 'children-unclickable': true }"
+    class="music-toggle children-unclickable"
     @click="toggleSounds"
     :aria-label="soundsEnabled && howlerUnlocked ? t('disable-sounds') : t('enable-sounds')"
     data-cursor="circle-white"
     data-sound="click"
     data-hoversound="hover"
   >
-    <Volume :active="soundsEnabled && howlerUnlocked" />
+    <Volume :active="soundsEnabled && howlerUnlocked" style="color: white" />
   </ButtonRound>
 </template>
 
 <style scoped lang="scss">
 .music-toggle {
-  &-dark {
-    background-color: var(--color-dark-blue-500);
-    color: var(--color-white-400);
-  }
+  position: relative;
 }
 </style>

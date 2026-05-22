@@ -15,7 +15,20 @@ export default {
   tags: ["node", "next", "kubernetes", "postgresql"],
   videoBorder: false,
   description:
-    "Wallpaper Product & Engagement Strategy<br/><br/>Developed premium wallpaper ecosystem concepts focused on retention, personalization, monetization psychology, and visual content discovery.",
+    "Wallpaper Product & Engagement Strategy focused on premium visual content discovery.",
+  problem:
+    "High user churn and low monetization in the wallpaper app space due to lack of personalization and weak engagement loops.",
+  strategy:
+    "Developed premium wallpaper ecosystem concepts centered on personalization, retention psychology, and high-quality visual discovery to improve user lifetime value.",
+  execution:
+    "Designed engagement systems based on visual content discovery trends, optimized monetization psychology through premium content placement, and built retention-focused personalization engines.",
+  outcomes:
+    "Created a premium brand identity and established scalable engagement loops that significantly improved user retention and personalization quality.",
+  metrics: [
+    "Improved user retention strategy",
+    "Enhanced personalization quality",
+    "Premium brand identity established",
+  ],
   components: [
     { type: "media", props: { type: "video", src: videoQuibbo, caption: "Visual Content Discovery" } },
     { type: "media", props: { type: "image", src: quibbo0, alt: "Product Concepts", caption: "Product Concepts" } },

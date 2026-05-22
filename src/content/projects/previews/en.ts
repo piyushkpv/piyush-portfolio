@@ -1,47 +1,33 @@
 import thumbnailCubeWar from "../../../assets/thumbnails/cubewar.webp";
 import thumbnailParticles from "../../../assets/thumbnails/particles.webp";
-import thumbnailPokedex from "../../../assets/thumbnails/pokedex.webp";
 import thumbnailQuibbo from "../../../assets/thumbnails/quibbo.webp";
 import thumbnailSharkie from "../../../assets/thumbnails/sharkie.webp";
-import thumbnailStreakon from "../../../assets/thumbnails/streakon.webp";
 
 import type { ProjectPreview } from "../../types";
 
 export default [
   {
-    title: "MIUI Themes",
-    slug: "streakon",
-    thumbnail: thumbnailStreakon,
-    description: "100M+ users scaled",
-  },
-  {
-    title: "Xiaomi TV+",
-    slug: "cubewar",
-    thumbnail: thumbnailCubeWar,
-    description: "+53% DAU growth",
-  },
-  {
-    title: "BuffyWalls",
-    slug: "quibbo",
-    thumbnail: thumbnailQuibbo,
-    description: "190K+ downloads",
-  },
-  {
-    title: "AI Content Systems",
-    slug: "sharkie",
+    title: "Xiaomi Themes Ecosystem",
+    slug: "xiaomi-themes",
     thumbnail: thumbnailSharkie,
-    description: "Multilingual workflows",
+    description: "30K+ successful orders",
   },
   {
-    title: "Creator Ecosystem",
-    slug: "particles",
+    title: "AIGC India Operations",
+    slug: "aigc-india",
     thumbnail: thumbnailParticles,
-    description: "2500+ creators",
+    description: "AI content scale",
   },
   {
-    title: "Growth & Monetization",
-    slug: "pokedex",
-    thumbnail: thumbnailPokedex,
-    description: "$1.8M+ revenue driven",
+    title: "WallRio & BuffyWalls",
+    slug: "wallrio-buffywalls",
+    thumbnail: thumbnailQuibbo,
+    description: "Engagement & Retention",
+  },
+  {
+    title: "Xiaomi TV+ / PatchWall",
+    slug: "xiaomi-tv-patchwall",
+    thumbnail: thumbnailCubeWar,
+    description: "Platform Experience",
   },
 ] as const satisfies ProjectPreview[];

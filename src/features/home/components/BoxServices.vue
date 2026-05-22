@@ -216,6 +216,8 @@ const services = computed(() => {
     flex-direction: column;
     gap: var(--space-sm);
     padding: var(--space-sm) var(--space-md);
+    color: var(--color-hologram-text-primary);
+    box-shadow: 0 0 15px rgba(var(--color-cyan-400-rgb), 0.2);
 
     @include mixins.landscape {
       padding: var(--space-xs) var(--space-sm);
@@ -236,6 +238,7 @@ const services = computed(() => {
       flex-direction: column;
       padding-left: 18px;
       position: relative;
+      color: var(--color-hologram-text-primary);
 
       &::before {
         content: "";
@@ -244,8 +247,9 @@ const services = computed(() => {
         top: 6px;
         width: 4px;
         height: 4px;
-        background-color: var(--color-text-cyan-400);
+        background-color: var(--color-hologram-text-secondary);
         border-radius: 50%;
+        box-shadow: 0 0 5px var(--color-hologram-text-secondary);
       }
 
       &-name {

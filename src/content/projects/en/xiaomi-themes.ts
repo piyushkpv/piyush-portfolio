@@ -14,7 +14,20 @@ export default {
   tags: ["three", "websockets", "react", "redis", "gray"],
   videoBorder: false,
   description:
-    "Monetization & Consumer Personalization<br/><br/>Worked on monetization strategy, paid themes/fonts operations, localization workflows, regional optimization, and engagement growth across Xiaomi Themes ecosystem.<br/><br/>Metrics: 30K+ successful orders in 4 months",
+    "Monetization & Consumer Personalization across Xiaomi's global themes and fonts ecosystem.",
+  problem:
+    "Low monetization efficiency and fragmented localization workflows across diverse regional markets, leading to missed revenue opportunities in the premium content ecosystem.",
+  strategy:
+    "Implemented a data-driven regional optimization strategy focusing on high-conversion markets, streamlined AI-assisted localization workflows, and introduced tiered monetization models for premium fonts and themes.",
+  execution:
+    "Collaborated with cross-functional teams to automate content ingestion pipelines, deployed growth experiments on pricing and discovery surfaces, and integrated AI-generated content systems to scale creative production.",
+  outcomes:
+    "Achieved significant growth in paid user penetration and operational efficiency through scalable content systems and regional targeting.",
+  metrics: [
+    "30K+ successful orders in 4 months",
+    "Regional optimization in 10+ markets",
+    "AI-assisted workflow efficiency gain",
+  ],
   components: [
     { type: "media", props: { type: "video", src: videoSharkie, caption: "Ecosystem Growth" } },
     { type: "media", props: { type: "image", src: sharkie0, alt: "Monetization Strategy", caption: "Monetization Strategy" } },

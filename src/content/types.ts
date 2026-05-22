@@ -10,6 +10,11 @@ export interface ProjectContent {
   theme: "light" | "dark";
   tags: TagVariant[];
   description?: string;
+  problem?: string;
+  strategy?: string;
+  execution?: string;
+  outcomes?: string;
+  metrics?: string[];
   videoBorder?: boolean;
   live?: string;
   source?: string;

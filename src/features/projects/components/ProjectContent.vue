@@ -113,4 +113,88 @@ onMounted(loadPreviews);
     }
   }
 }
+
+.project-case-study {
+  padding: var(--space-xl) var(--space-outer);
+  gap: var(--space-xl);
+
+  @include mixins.mq("md") {
+    padding: var(--space-xxxl) var(--space-outer);
+  }
+
+  &-main {
+    grid-column: 1 / 13;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+
+    @include mixins.mq("md") {
+      grid-column: 1 / 8;
+    }
+
+    @include mixins.mq("lg") {
+      grid-column: 2 / 8;
+    }
+  }
+
+  &-sidebar {
+    grid-column: 1 / 13;
+
+    @include mixins.mq("md") {
+      grid-column: 8 / 13;
+    }
+
+    @include mixins.mq("lg") {
+      grid-column: 8 / 12;
+    }
+  }
+
+  &-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  &-label {
+    font-family: "ProFontWindows", monospace;
+    text-transform: uppercase;
+    color: var(--color-cyan-400);
+    font-size: var(--font-size-sm);
+    letter-spacing: 0.1em;
+  }
+
+  &-text {
+    font-size: var(--font-size-md);
+    line-height: 1.6;
+    color: var(--color-text-400);
+
+    @include mixins.mq("md") {
+      font-size: var(--font-size-lg);
+    }
+  }
+}
+
+.project-metrics-list {
+  list-style: none;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.project-metric-item {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  font-size: var(--font-size-md);
+  color: var(--color-text-400);
+  position: relative;
+  padding-left: var(--space-md);
+
+  &::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--color-cyan-400);
+  }
+}
 </style>

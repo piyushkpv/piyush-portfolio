@@ -63,11 +63,12 @@ const { withSocial = true } = defineProps<Props>();
 
 <style scoped lang="scss">
 .footer {
-  background: var(--color-background-300, var(--color-beige-400));
+  background: var(--color-background-400);
   width: 100%;
   display: flex;
   justify-content: center;
   position: relative;
+  transition: background-color 0.4s ease;
 
   &-content {
     display: flex;
@@ -148,7 +149,8 @@ const { withSocial = true } = defineProps<Props>();
     top: 0;
     left: 0;
     transform: translateY(-100%);
-    color: var(--color-background-300, var(--color-beige-400));
+    color: var(--color-background-400);
+    transition: color 0.4s ease;
   }
 }
 </style>

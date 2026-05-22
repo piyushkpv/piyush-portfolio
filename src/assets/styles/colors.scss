@@ -1,37 +1,109 @@
 :root {
-  //--color-text-400: #001341;
-  --color-text-400: #2d2a24;
-  --color-text-300: #5f5646;
-
-  --color-grayscale-500: rgb(223, 210, 191);
-  --color-grayscale-400: rgb(233, 222, 208);
-
-  --color-beige-700: rgb(223, 209, 188);
-  --color-beige-600: rgb(233, 222, 208);
-  --color-beige-500: rgb(241, 229, 213);
-  --color-beige-400: #f5efe6;
-
-  --color-background-400: #f5efe6;
-
-  --color-black-400: #2d2a24;
-
-  --color-gray-500: #67727c;
-  --color-gray-400: #a9b0b7;
-
+  /* Core brand colors */
   --color-orange-400: #ff8400;
-
+  --color-orange-500: #ff8a1f;
+  --color-cyan-400: #35c2ff;
+  --color-cyan-400-rgb: 53, 194, 255;
   --color-white-400: #ffffff;
+  --color-white-400-rgb: 255, 255, 255;
+  --color-dark-navy: #081426;
 
-  --color-cyan-500: #0086bb;
-  --color-cyan-400: rgb(52, 191, 255);
+  /* Theme variables - Light Mode */
+  --color-bg: #f5efe6;
+  --color-surface: #ffffff;
+  --color-text-primary: #2d2a24;
+  --color-text-secondary: #5f5646;
 
-  --color-text-cyan-400: #e1f5ff;
-  --color-text-cyan-300: #81bdd8;
+  /* Nav colors - Light Mode */
+  --color-nav-bg: #e6ded1;
+  --color-nav-hover: rgba(8, 20, 38, 0.06);
+  --color-nav-text: #081426;
+  --color-nav-bar: var(--color-orange-500);
+  --color-nav-text-active: #ffffff;
 
-  --color-dark-blue-600: #234ba2;
-  --color-dark-blue-500: #052e87;
-  --color-dark-blue-400: #002474;
+  /* Button/Icon colors - Light Mode */
+  --color-btn-theme-bg: var(--color-dark-navy);
+  --color-btn-theme-text: #ffffff;
+  --color-btn-accent-bg: var(--color-orange-500);
+  --color-btn-accent-text: #ffffff;
 
-  --color-hologram-top: rgb(0, 53, 133);
+  /* Hero / About Panel specific */
+  --color-hero-panel-bg: #2d2a24;
+  --color-hero-headline: #f5f7fb;
+  --color-hero-secondary: #dbeafe;
+
+  /* Glass / Hologram logic (Light) */
+  --color-hologram-top: rgba(0, 53, 133, 1);
   --color-hologram-bottom: rgba(0, 82, 145, 0.6);
+  --color-hologram-text-primary: #eaf6ff;
+  --color-hologram-text-secondary: #7ddcff;
+
+  --transition-theme: 0.4s ease;
+
+  /* Legacy variable synchronization */
+  --color-background-400: var(--color-bg);
+  --color-beige-400: var(--color-bg);
+  --color-beige-600: #dcd1c1; /* Slightly darker beige for notches */
+}
+
+[data-theme="dark"] {
+  /* Theme variables - Dark Mode */
+  --color-bg: #07111f;
+  --color-surface: #0d1b2a;
+  --color-text-primary: #f4f7fb;
+  --color-text-secondary: #94a3b8;
+
+  /* Nav colors - Dark Mode */
+  --color-nav-bg: #081426;
+  --color-nav-hover: #10223a;
+  --color-nav-text: #ffffff;
+  --color-nav-bar: var(--color-orange-500);
+  --color-nav-text-active: #ffffff;
+
+  /* Button/Icon colors - Dark Mode */
+  --color-btn-theme-bg: #132238;
+  --color-btn-theme-text: #f5f7fb;
+  --color-btn-accent-bg: var(--color-orange-500);
+  --color-btn-accent-text: #ffffff;
+
+  --color-hero-panel-bg: #0b1c2d;
+  --color-hero-headline: #f4f7fb;
+  --color-hero-secondary: #94a3b8;
+
+  /* Glass / Hologram logic (Dark) */
+  --color-hologram-top: rgba(11, 28, 45, 0.8);
+  --color-hologram-bottom: rgba(6, 17, 32, 0.4);
+
+  --color-hologram-text-primary: #eaf6ff;
+  --color-hologram-text-secondary: #7ddcff;
+
+  --color-cyan-400: #35c2ff;
+  --color-cyan-400-rgb: 53, 194, 255;
+
+  /* Legacy variable synchronization */
+  --color-background-400: var(--color-bg);
+  --color-beige-400: var(--color-bg);
+  --color-beige-600: #0b1c2d; /* Slightly lighter navy for notches */
+}
+
+/* Base resets and smooth transitions */
+html {
+  background-color: var(--color-bg);
+  transition: background-color var(--transition-theme);
+}
+
+body {
+  transition: background-color var(--transition-theme), color var(--transition-theme);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+}
+
+*, *::before, *::after {
+  transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+}
+
+/* Global selection */
+::selection {
+  background: var(--color-orange-400);
+  color: #ffffff;
 }

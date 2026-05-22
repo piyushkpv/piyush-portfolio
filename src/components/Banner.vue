@@ -82,6 +82,7 @@ watchEffect((onInvalidate) => {
     width: 100%;
     height: 100%;
     transform-origin: left center;
+    transition: outline-color 0.4s ease;
   }
 
   &-size {

@@ -63,6 +63,7 @@ const classes = computed(() => ["hologram-box", { "hologram-box-has-title": !!sl
     background: linear-gradient(to bottom, var(--color-hologram-top) 0%, var(--color-hologram-bottom) 95%);
     font-size: var(--font-size-md);
     line-height: var(--line-height-copy);
+    transition: background-color 0.4s ease, border-color 0.4s ease;
 
     @include mixins.mq("md") {
       font-size: var(--font-size-lg);
@@ -120,6 +121,8 @@ const classes = computed(() => ["hologram-box", { "hologram-box-has-title": !!sl
       text-transform: uppercase;
       letter-spacing: 0.02em;
       white-space: nowrap;
+      color: var(--color-hologram-text-primary);
+      transition: color 0.4s ease;
     }
 
     &-content {
@@ -132,6 +135,7 @@ const classes = computed(() => ["hologram-box", { "hologram-box-has-title": !!sl
       height: 100%;
       padding: var(--space-xxs) var(--space-sm);
       background-color: var(--color-hologram-top);
+      transition: background-color 0.4s ease, border-color 0.4s ease;
 
       @include mixins.mq("md") {
         padding: var(--space-xxs) var(--space-md);
@@ -149,6 +153,7 @@ const classes = computed(() => ["hologram-box", { "hologram-box-has-title": !!sl
       border-radius: 0 var(--radius-md) 0 0;
       background-color: var(--color-hologram-top);
       z-index: -2;
+      transition: background-color 0.4s ease, border-color 0.4s ease;
     }
   }
 

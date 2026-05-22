@@ -14,6 +14,22 @@ import AppearingText from "../../../components/AppearingText.vue";
           <h1 class="hero-title">Piyush<br />Varshney</h1>
           <Banner class="hero-banner" :copy="t('job-title')" v-if="!preloaderVisible" animated />
         </div>
+        <div class="hero-content-actions" v-if="!preloaderVisible">
+          <Button
+            renderAs="a"
+            href="/resume/Piyush-Varshney-Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Piyush-Varshney-Resume.pdf"
+            variant="theme"
+            size="md"
+            data-cursor="circle-white"
+            data-hoversound="hover"
+            data-sound="click"
+          >
+            {{ t("download-resume") }}
+          </Button>
+        </div>
       </div>
     </div>
   </div>
@@ -46,22 +62,17 @@ import AppearingText from "../../../components/AppearingText.vue";
     }
 
     &-inner {
-      transform-origin: center center;
       grid-column: 1 / 13;
-      gap: var(--space-xxl);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: fit-content;
+      width: 100%;
       position: relative;
-      left: 50%;
-      transform: translateX(-50%);
 
       @include mixins.landscape {
-        left: 0;
-        transform: translateX(0);
         grid-column: 2 / 13;
+        align-items: flex-start;
         width: fit-content;
       }
     }
@@ -70,9 +81,26 @@ import AppearingText from "../../../components/AppearingText.vue";
       display: flex;
       flex-direction: column;
       gap: var(--space-sm);
+      position: relative;
+      margin-bottom: var(--space-xxl);
 
       @include mixins.mq("md") {
         gap: var(--space-md);
+        margin-bottom: var(--space-xxxl);
+      }
+    }
+
+    &-actions {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      position: relative;
+      z-index: 20;
+      margin-top: var(--space-lg);
+
+      @include mixins.landscape {
+        justify-content: flex-start;
+        margin-top: 0;
       }
     }
 
@@ -85,6 +113,8 @@ import AppearingText from "../../../components/AppearingText.vue";
     font-weight: 900;
     letter-spacing: 0.02em;
     font-size: var(--font-size-title-lg);
+    color: var(--color-text-400);
+    transition: color 0.4s ease;
 
     @include mixins.landscape {
       font-size: var(--font-size-title-lg);
