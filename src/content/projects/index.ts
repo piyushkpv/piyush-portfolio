@@ -1,6 +1,6 @@
 import type { Locale } from "../../i18n/types";
 
-export const projectIds = ["streakon", "cubewar", "quibbo", "sharkie", "particles", "pokedex"];
+export const projectIds = ["xiaomi-themes", "aigc-india", "wallrio-buffywalls", "xiaomi-tv-patchwall"];
 
 function simplifyModules(glob: Record<string, any>) {
   const result: Record<string, any> = {};

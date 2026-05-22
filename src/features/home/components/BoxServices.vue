@@ -107,13 +107,11 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
 
 const SERVICES_EN = [
   { name: "Product Strategy" },
-  { name: "Monetization" },
-  { name: "AI Workflows" },
-  { name: "Growth Systems" },
-  { name: "Experimentation" },
-  { name: "User Funnels" },
-  { name: "Analytics & Insights" },
-  { name: "Content Ecosystems" },
+  { name: "Growth & Monetization" },
+  { name: "AI Operations" },
+  { name: "Consumer Tech" },
+  { name: "User Engagement" },
+  { name: "Localization Systems" },
 ] as const satisfies { name: string }[];
 
 const services = computed(() => {
